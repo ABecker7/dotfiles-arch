@@ -7,7 +7,7 @@
 set $mod Mod4
 
 # i3 font (not really used)
-font pango:JetBrains Mono 12
+font pango:monospace 12
 
 # Nord colours (not really used)
 set $nord0   #2E3440
@@ -163,7 +163,7 @@ bindsym $mod+Shift+x exec --no-startup-id i3lock --color "2e3440"
 # Autostarts #
 # ========== #
 # Polybar
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+# exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # Picom
 # exec_always --no-startup-id picom -b --config ~/.config/picom/picom.conf
@@ -174,23 +174,20 @@ exec_always --no-startup-id /usr/bin/dunst
 # NetworkManager applet
 exec --no-startup-id nm-applet
 
-# Manjaro news
-exec --no-startup-id matray
-
 # Polkit daemon from lx-gtk3
-exec --no-startup-id /usr/bin/lxpolkit
+# exec --no-startup-id /usr/bin/lxpolkit
 
 # Nitrogen (wallpaper)
-exec --no-startup-id nitrogen --restore
+# exec --no-startup-id nitrogen --restore
 
 # Flameshot
-exec --no-startup-id flameshot
+# exec --no-startup-id flameshot
 
 # Monitor settings
 # Set to 1920x1080@144Hz
-exec --no-startup-id $HOME/.config/bashscripts/setres.bash
+# exec --no-startup-id $HOME/.config/bashscripts/setres.bash
 # Start nightlight daemon
-exec --no-startup-id redshift-gtk
+# exec --no-startup-id redshift-gtk
 
 # ========================== #
 #       Window rules #
