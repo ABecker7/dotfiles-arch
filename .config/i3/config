@@ -166,7 +166,7 @@ bindsym $mod+Shift+x exec --no-startup-id i3lock --color "2e3440"
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # Picom
-exec_always --no-startup-id picom -b --config ~/.config/picom/picom.conf
+# exec_always --no-startup-id picom -b --config ~/.config/picom/picom.conf
 
 # Dunst (will autostart from dbus anyway)
 exec_always --no-startup-id /usr/bin/dunst
