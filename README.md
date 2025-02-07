@@ -4,7 +4,7 @@ Optional configurations for i3 with nord
 ## Usage
 1. Clone the repository
 ```
-git clone https://github.com/arh06/dotfiles-manjaro
+git clone https://github.com/ABecker7/dotfiles-arch
 ```
 2. Move files. I believe in you.
 
