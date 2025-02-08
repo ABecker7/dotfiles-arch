@@ -1,0 +1,203 @@
+# ================================================ #
+#  https://github.com/arh06/dotfiles-manjaro  #
+# ================================================ #
+# ======= #
+# General #
+# ======= #
+set $mod Mod4
+
+# i3 font (not really used)
+font pango:monospace 8
+
+# Nord colours (not really used)
+set $nord0   #2E3440
+set $nord1   #3B4252
+set $nord2   #434C5E
+set $nord3   #4C566A
+set $nord4   #D8DEE9
+set $nord5   #E5E9F0
+set $nord6   #ECEFF4
+set $nord7   #8FBCBB
+set $nord8   #88C0D0
+set $nord9   #81A1C1
+set $nord10  #5E81AC
+set $nord11  #BF616A
+set $nord12  #D08770
+set $nord13  #EBCB8B
+set $nord14  #A3BE8C
+set $nord15  #B48EAD
+
+# Keyboard setting
+exec --no-startup-id "setxkbmap -layout us -option 'grp:alt_shift_toggle'"
+
+# ==================== #
+#   General keybinds   #
+#  =================== #
+# kill focused window
+bindsym $mod+Shift+q kill
+
+# change focus
+bindsym $mod+h focus left
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+bindsym $mod+j focus down
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# move focused window
+bindsym $mod+Ctrl+h move left
+bindsym $mod+Ctrl+j move down
+bindsym $mod+Ctrl+k move up
+bindsym $mod+Ctrl+l move right
+
+# Resize winndows
+bindsym $mod+Shift+l resize shrink width 5 px or 5 ppt
+bindsym $mod+Shift+k resize grow height 5 px or 5 ppt
+bindsym $mod+Shift+j resize shrink height 5 px or 5 ppt
+bindsym $mod+Shift+h resize grow width 5 px or 5 ppt
+
+# My brain seems to think it makes sense the other way round
+# split in horizontal orientation
+bindsym $mod+v split v
+
+# split in vertical orientation
+bindsym $mod+c split h
+
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen toggle
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+floating_modifier $mod
+bindsym $mod+space focus mode_toggle
+
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+Ctrl+r restart
+bindsym $mod+Shift+r reload
+
+# Use pactl to adjust volume in PulseAudio/Pipewire
+#set $refresh_i3status killall -SIGUSR1 i3status
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5%
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5%
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
+bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle
+
+# Workspace variables
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "10"
+
+# switch to workspace
+bindsym $mod+1 workspace number $ws1
+bindsym $mod+2 workspace number $ws2
+bindsym $mod+3 workspace number $ws3
+bindsym $mod+4 workspace number $ws4
+bindsym $mod+5 workspace number $ws5
+bindsym $mod+6 workspace number $ws6 
+bindsym $mod+7 workspace number $ws7 
+bindsym $mod+8 workspace number $ws8 
+bindsym $mod+9 workspace number $ws9
+bindsym $mod+0 workspace number $ws10
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace number $ws1
+bindsym $mod+Shift+2 move container to workspace number $ws2
+bindsym $mod+Shift+3 move container to workspace number $ws3
+bindsym $mod+Shift+4 move container to workspace number $ws4
+bindsym $mod+Shift+5 move container to workspace number $ws5
+bindsym $mod+Shift+6 move container to workspace number $ws6
+bindsym $mod+Shift+7 move container to workspace number $ws7
+bindsym $mod+Shift+8 move container to workspace number $ws8
+bindsym $mod+Shift+9 move container to workspace number $ws9
+bindsym $mod+Shift+0 move container to workspace number $ws10
+
+# =========== #
+# WM elements #
+# =========== #
+# Gaps
+gaps inner 7
+
+# Borders for traditional config
+client.focused #eceff4 #eceff4 #eceff4 #eceff4 #eceff4
+client.focused_inactive #4c566a #4c566a #4c566a #4c566a #4c566a
+client.unfocused #2e3440 #2e3440 #2e3440 #2e3440 #2e3440
+client.placeholder #eceff4 #eceff4 #eceff4 #eceff4 #eceff4
+client.background #eceff4
+
+# Focus border width (0 to remove)
+for_window  [class="^.*"] border pixel 0
+
+# =================== #
+# Hotkey applications #
+# =================== #
+# start a terminal
+bindsym $mod+Return exec --no-startup-id alacritty
+
+# start a file manager
+bindsym $mod+backslash exec --no-startup-id thunar
+
+# start flameshot screenshot tool
+bindsym $mod+Print exec --no-startup-id flameshot gui
+
+# Bind rofi
+bindsym $mod+d exec --no-startup-id rofi -show drun -icon-theme "Papirus-Dark"
+bindsym $mod+s exec --no-startup-id rofi -show window
+# Rofi power menu (logout from here)
+bindsym $mod+Shift+p exec --no-startup-id rofi -modi 'Powermenu:~/.config/rofi/scripts/powermenu.sh' -show Powermenu -icon-theme "Papirus-Dark"
+
+# Lock
+bindsym $mod+Shift+x exec --no-startup-id i3lock --color "2e3440"
+
+# ========== #
+# Autostarts #
+# ========== #
+# Polybar
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+
+# Picom
+exec_always --no-startup-id picom -b --config ~/.config/picom/picom.conf
+
+# Dunst (will autostart from dbus anyway)
+exec_always --no-startup-id /usr/bin/dunst
+
+# NetworkManager applet
+exec --no-startup-id nm-applet
+
+# Polkit daemon from lx-gtk3
+exec --no-startup-id /usr/bin/lxpolkit
+
+# Nitrogen (wallpaper)
+exec --no-startup-id nitrogen --restore
+
+# Flameshot
+exec --no-startup-id flameshot
+
+# Monitor settings
+# Set to 1920x1080@144Hz
+exec --no-startup-id $HOME/.config/bashscripts/setres.bash
+# Start nightlight daemon
+exec --no-startup-id redshift-gtk
+
+# ========================== #
+#       Window rules #
+# ========================== #
+# Floating
+for_window [class=pavucontrol] floating enable
+for_window [class=Qalculate-gtk] floating enable
+for_window [class=flameshot] floating enable
+
+# Automove
+for_window [class=discord] move container to workspace number $ws9
+for_window [class=Spotify] move container to workspace number $ws10
+for_window [class=Audacious] move container to workspace number $ws10

@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =2
+let g:netrw_dirhist_2='/usr/share/licenses/i3lock'
+let g:netrw_dirhist_1='/home/andrew/.config/i3'
+let g:netrw_dirhist_0='/home/andrew/.config'
+let g:netrw_dirhist_9='/home/andrew'
+let g:netrw_dirhist_8='/home/andrew/.config'
+let g:netrw_dirhist_7='/home/andrew/.local/share/xorg'
+let g:netrw_dirhist_6='/home/andrew/.local/share'
+let g:netrw_dirhist_5='/home/andrew/.local'
+let g:netrw_dirhist_4='/home/andrew/.local/share'
+let g:netrw_dirhist_3='/home/andrew/.local/share/rofi'

@@ -1,0 +1,14 @@
+/bin/sh: line 1: dex: command not found
+i3status: trying to auto-detect output_format setting
+i3status: auto-detected "i3bar"
+
+(nm-applet:737): GLib-GIO-WARNING **: 22:26:18.181: unable to send notifications through org.freedesktop.Notifications: GDBus.Error:org.freedesktop.DBus.Error.ServiceUnknown: The name is not activatable
+[../i3bar/src/xcb.c:1132] ERROR: PropertyNotify received for unknown window 00e00002
+xterm: cannot load font "-misc-fixed-medium-r-semicondensed--13-120-75-75-c-60-iso10646-1"
+xterm: cannot load font "-misc-fixed-medium-r-semicondensed--13-120-75-75-c-60-iso10646-1"
+BUG: single log message > 4k
+i3status: exiting due to signal.
+[ 02/06/2025 22:37:49.700 parse_config_libconfig ERROR ] The sw-opti option has been deprecated. Please remove it from your configuration file. If you encounter any problems without this feature, please feel free to open a bug report
+[ 02/06/2025 22:37:49.700 main FATAL ERROR ] Failed to create new session.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+Closing SHM log "/i3-log-718"
